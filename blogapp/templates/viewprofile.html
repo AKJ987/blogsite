@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body_block%}
+<link rel="stylesheet" href="{%static 'css/style3.css'%}">
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{request.user.users.profile_pic.url}}" class="card-img-top" alt="...">
+            <div class="card-body bg-warning">
+                <h5 class="card-title bg-warning">{{request.user}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-info">Bio : {{request.user.users.bio}}</li>
+                <li class="list-group-item bg-info">Phone : {{request.user.users.phone}}</li>
+                <li class="list-group-item bg-info">DOB : {{request.user.users.date_of_birth}}</li>
+                <li class="list-group-item bg-info">Gender : {{request.user.users.gender}}</li>
+            </ul>
+            <div class="card-body bg-success">
+                <a href="{%url 'profile_update' request.user.users.id%}" class="card-link bg-success" style="color:black;">Update Profile</a>
+                <a href="#" class="card-link bg-success" style="color:black;">Another link</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}

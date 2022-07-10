@@ -1,0 +1,9 @@
+body{
+    background: url("/static/images/bcck.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.col{
+padding: 20px 0px 50px 80px;
+}

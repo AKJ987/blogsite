@@ -1,0 +1,17 @@
+body{
+    background: url("/static/images/bck5.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bttn{
+text-align : center;
+}
+
+.btn{
+background-color: white;
+}
+
+form{
+padding-top: 80px;
+}

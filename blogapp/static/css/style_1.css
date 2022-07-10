@@ -1,0 +1,17 @@
+ body{
+    background: url("/static/images/bcck1.jpeg");
+    background-size: cover;
+}
+
+.img{
+width: 100%;
+}
+
+.p{
+text-align: center;
+padding: 5px;
+}
+
+.cooool{
+background-color: yellow;
+}

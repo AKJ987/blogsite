@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body_block%}
+<link rel="stylesheet" href="{%static 'css/style_1.css'%}">
+{%for blog in blogs%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="cooool col-4">
+        <p class="p">{{blog.title}}</p>
+        {%if blog.image%}
+        <img class="img" src="{{blog.image.url}}" alt="">
+        {%endif%}
+        <p class="p">Posted by : {{blog.author}}</p>
+        <p class="p">Created by : {{blog.posted_date}}</p>
+        <form action="{%url 'add_comment' blog.id%}" method="post">
+            {%csrf_token%}
+            {{commentform.as_p}}
+            <input type="submit">
+            <a href="{%url 'add_like' blog.id%}">Like</a>
+            {{blog.get_like_count}}
+            {{blog.get_liked_users}}
+        </form>
+        {%for comment in blog.comments_set.all%}
+        <div>{{comment.comment}}</div>
+        <div>{{comment.user}}</div>
+        {%endfor%}
+    </div>
+    <div class="col-4"></div>
+</div><br>
+{%endfor%}
+{%endblock%}

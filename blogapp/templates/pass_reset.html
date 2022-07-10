@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block body_block%}
+<link rel="stylesheet" href="{%static 'css/style4.css'%}">
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="" method="post">
+            {%csrf_token%}
+            <input type="text" name="old_password" id="id_old_password" placeholder="Old Password" class="form-control"><br><br>
+            <input type="text" name="new_password" id="id_new_password" placeholder="New Password" class="form-control"><br><br>
+            <input type="text" name="confirm_password" id="id_confirm_password" placeholder="Confirm Password" class="form-control"><br><br>
+            <div class="bttn"><button type="submit" class="btn btn-outline-dark">Submit</button></div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+{%endblock%}

@@ -1,0 +1,35 @@
+body{
+    background: url("/static/images/bck04.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cd{
+padding-top : 20px;
+}
+
+.btn{
+text-align : center:
+}
+
+.bttn{
+padding: 10px 30px 10px 30px;
+border-radius: 20px;
+}
+
+.pro{
+padding-top: 40px;}
+
+.cd, .tt{
+background-color: #384a3a;
+opacity: 90%;
+padding: 30px;
+}
+
+.tt{
+padding-top: 70px;
+}
+
+label{
+color: white;
+}

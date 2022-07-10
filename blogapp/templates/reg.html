@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body>
+<div class="pro row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        {%if messages%}
+            {%for msg in messages%}
+                {%if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS%}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>SUCCESS!</strong> {{msg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {%endif%}
+            {%endfor%}
+        {%endif%}
+
+        {%if messages%}
+            {%for msg in messages%}
+                {%if msg.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>ERROR!</strong> {{msg}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {%endif%}
+            {%endfor%}
+        {%endif%}
+    </div>
+    <div class="col-4"></div>
+</div>
+
+<form action="" method="post">
+    {%csrf_token%}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <br><br>
+            <h3 class="txt">USER REGISTRATION FORM</h3><br><br>
+            <input type="text" name="username" id="id_username" placeholder="Username" class="form-control"><br><br>
+            <input type="text" name="first_name" id="id_first_name" placeholder="First Name" class="form-control"><br><br>
+            <input type="text" name="last_name" id="id_last_name" placeholder="Last Name" class="form-control"><br><br>
+            <input type="email" name="email" id="id_email" placeholder="Email" class="form-control"><br><br>
+            <input type="password" name="password1" id="id_password1" placeholder="Password" class="form-control"><br><br>
+            <input type="password" name="password2" id="id_password2" placeholder="Re-Enter Password" class="form-control"><br><br>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+    <div class="btttn row">
+        <div class="col-4"></div>
+        <div class="bttn col-4">
+            <button type="submit" class="btn btn-outline-dark">Submit</button>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</body>
+</html>

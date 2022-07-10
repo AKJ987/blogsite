@@ -1,0 +1,23 @@
+body{
+    background: url("/static/images/bck.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bttn{
+text-align : center;
+}
+
+.btn{
+background-color: white;
+}
+
+.btttn{
+padding-bottom: 60px;
+}
+
+.txt{
+text-align: center;
+color: white;
+letter-spacing: 10px;
+}
